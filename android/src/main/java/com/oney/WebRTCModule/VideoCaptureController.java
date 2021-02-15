@@ -18,6 +18,8 @@ public class VideoCaptureController {
     private static final String TAG
         = VideoCaptureController.class.getSimpleName();
 
+    public static final instances = new ArrayList<VideoCaptureController>();
+
     private boolean isFrontFacing;
 
     /**
@@ -55,6 +57,8 @@ public class VideoCaptureController {
         String facingMode = ReactBridgeUtil.getMapStrValue(constraints, "facingMode");
 
         videoCapturer = createVideoCapturer(deviceId, facingMode);
+
+        VideoCaptureController.instances.add(this);
     }
 
     public void dispose() {
@@ -75,6 +79,13 @@ public class VideoCaptureController {
             // XXX This can only fail if we initialize the capturer incorrectly,
             // which we don't. Thus, ignore any failures here since we trust
             // ourselves.
+        }
+    }
+
+    public void bla(int width, int height) {
+        try {
+            videoCapturer.changeCaptureFormat(width, height, fps);
+        } catch (Exception e) {
         }
     }
 

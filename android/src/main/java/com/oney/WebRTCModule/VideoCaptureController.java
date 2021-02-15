@@ -70,7 +70,7 @@ public class VideoCaptureController {
 
     public void startCapture() {
         try {
-            videoCapturer.startCapture(356, 200, fps);
+            videoCapturer.startCapture(1080, 1920, fps);
         } catch (RuntimeException e) {
             // XXX This can only fail if we initialize the capturer incorrectly,
             // which we don't. Thus, ignore any failures here since we trust

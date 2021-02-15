@@ -18,7 +18,7 @@ public class VideoCaptureController {
     private static final String TAG
         = VideoCaptureController.class.getSimpleName();
 
-    public static final instances = new ArrayList<VideoCaptureController>();
+    public static final List instances = new ArrayList<VideoCaptureController>();
 
     private boolean isFrontFacing;
 
